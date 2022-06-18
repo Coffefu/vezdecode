@@ -1,0 +1,14 @@
+.wrapper {
+    width: 100vw;
+    height: 100vh;
+
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 300px;
+    height: 600px;
+    
+}
