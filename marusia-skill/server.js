@@ -2,6 +2,7 @@ const express = require("express");
 const server = express();
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 3000;
+const router = express.Router();
 
 const createResponse = require("./create-response.js");
 const { pick } = require("ramda");
@@ -39,7 +40,7 @@ server.post("/webhook", (req, res) => {
   }
 });
 
+app.use(`/.netlify/functions/api`, router);
 
-server.listen(port, () => {
-  console.log("Сервер запущен на http://localhost:" + port);
-});
+module.exports = app;
+module.exports.handler = serverless(app);

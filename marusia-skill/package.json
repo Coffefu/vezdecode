@@ -4,12 +4,15 @@
   "description": "Echoing skill for Marusia voice assistant",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
-  },
+    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "build": "./node_modules/.bin/netlify-lambda build src"
+    },
   "dependencies": {
-    "express": "^4.17.1",
     "body-parser": "^1.19.0",
-    "ramda": "^0.27.1"
+    "express": "^4.17.1",
+    "netlify-lambda": "^2.0.15",
+    "ramda": "^0.27.1",
+    "serverless-http": "^3.0.1"
   },
   "engines": {
     "node": "12.x"
