@@ -65,10 +65,9 @@ class FoodAdapter(
         val textSpan = Html.fromHtml(htmlTaggedString)
         holder.addCart.text = textSpan
 
-        // обработка нажатия
-        // обработка нажатия
-        holder.cv.setOnClickListener { // вызываем метод слушателя, передавая ему данные
+        holder.cv.setOnClickListener {
             onClickListener.onStateClick(productsList[position], position)
+            PRODUCT = productsList[position]
         }
     }
 

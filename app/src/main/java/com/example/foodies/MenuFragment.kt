@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 const val ARG_OBJECT = "object"
 const val ARG_TAG = "tag"
+lateinit var PRODUCT: Products
 
 class MenuFragment(
     val productsList: List<Products>,
@@ -38,13 +38,13 @@ class MenuFragment(
         val stateClickListener: OnStateClickListener = object : OnStateClickListener {
             override fun onStateClick(state: Products, position: Int) {
                 val intent = Intent(context, TabElementActivity::class.java)
+                intent.putExtra("position", position)
                 startActivity(intent)
-
-                Toast.makeText(
-                    context,
-                    "Был выбран пункт " + state.name,
-                    Toast.LENGTH_SHORT
-                ).show()
+//                Toast.makeText(
+//                    context,
+//                    "Был выбран пункт " + state.name,
+//                    Toast.LENGTH_SHORT
+//                ).show()
             }
         }
 
