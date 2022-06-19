@@ -35,4 +35,5 @@ class MenuAdapter(fa: FragmentActivity) : FragmentStateAdapter(fa) {
         this.categoriesList = categoriesList
         this.tagsList = tagsList
     }
+
 }

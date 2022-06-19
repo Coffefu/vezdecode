@@ -43,7 +43,7 @@
             app:srcCompat="@drawable/ic_menu" />
 
         <ImageButton
-            android:id="@+id/imageButton2"
+            android:id="@+id/bucketbutton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -64,7 +64,7 @@
             android:layout_marginEnd="90dp"
             android:contentDescription="@string/todo"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/imageButton2"
+            app:layout_constraintEnd_toStartOf="@+id/bucketbutton"
             app:layout_constraintStart_toEndOf="@+id/imageButton"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/foodies_logo"

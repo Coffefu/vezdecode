@@ -1,7 +1,10 @@
 package com.example.foodies
 
+
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager2.widget.ViewPager2
 import com.example.foodies.databinding.ActivityMainBinding
@@ -26,17 +29,6 @@ class MainActivity : AppCompatActivity() {
         viewPager = binding.viewpager
         viewPager.orientation = ViewPager2.ORIENTATION_HORIZONTAL
 
-//        viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-//            override fun onPageSelected(position: Int) {
-//                super.onPageSelected(position)
-//                Toast.makeText(
-//                    this@MainActivity, position.toString(),
-//                    Toast.LENGTH_SHORT
-//                ).show()
-//
-//            }
-//        })
-
         val jsonTextProducts = readText(this, R.raw.products)
         val typeTokenProducts = object : TypeToken<List<Products>>() {}.type
         val productsList =
@@ -59,6 +51,26 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(tabLayout, viewPager) { tab, position ->
             tab.text = categoriesList[position].name
         }.attach()
+
+
+        val buttonbucket = binding.bucketbutton
+        buttonbucket.setOnClickListener {
+            val intent = Intent(this, BacketActivity::class.java)
+            startActivity(intent)
+        }
+
+        val search = binding.searchView
+        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                return false
+            }
+
+        })
+
     }
 
     override fun onBackPressed() {

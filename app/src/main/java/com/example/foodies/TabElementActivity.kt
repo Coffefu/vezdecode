@@ -12,6 +12,7 @@ class TabElementActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tab_element)
         val position = intent.getSerializableExtra("position")
+
         Toast.makeText(
             this,
             "Был выбран пункт " + PRODUCT.name,

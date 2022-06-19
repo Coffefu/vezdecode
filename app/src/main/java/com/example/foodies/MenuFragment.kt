@@ -40,11 +40,6 @@ class MenuFragment(
                 val intent = Intent(context, TabElementActivity::class.java)
                 intent.putExtra("position", position)
                 startActivity(intent)
-//                Toast.makeText(
-//                    context,
-//                    "Был выбран пункт " + state.name,
-//                    Toast.LENGTH_SHORT
-//                ).show()
             }
         }
 
